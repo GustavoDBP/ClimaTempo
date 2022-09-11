@@ -1,4 +1,5 @@
 ﻿using ClimaTempo.Models;
+using ClimaTempo.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,19 +12,40 @@ namespace ClimaTempo.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
+            ViewData["Top3Hottest"] = new List<WeatherForecast>() {
+                new WeatherForecast() {
+                    Cidade = "Petrópolis/RJ",
+                    Min = 6,
+                    Max = 19,
+                    DataPrevisao = new DateTime()
+                },
+                new WeatherForecast() {
+                    Cidade = "São Paulo/SP",
+                    Min = 6,
+                    Max = 19,
+                    DataPrevisao = new DateTime()
+                }
+            };
+            ViewData["Top3Coldest"] = new List<WeatherForecast>() {
+                new WeatherForecast() {
+                    Cidade = "Petrópolis/RJ",
+                    Min = 6,
+                    Max = 19,
+                    DataPrevisao = new DateTime()
+                },
+                new WeatherForecast() {
+                    Cidade = "São Paulo/SP",
+                    Min = 6,
+                    Max = 19,
+                    DataPrevisao = new DateTime()
+                }
+            };
+
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
         }

@@ -1,71 +1,171 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
-/* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
 html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
     font-size: 16px;
-  }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+body {    
+    margin-bottom: 60px;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+main{
+    margin: 50px 250px;
 }
+@media(max-size: 700px) {
+    main {
+        margin: 0px;
+    }
+}
+
+.overview{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+.overview > div:first-child {
+    width: 300px;
+    align-self: flex-end;
+}
+@media (max-width: 1130px){
+    .overview > div:first-child {
+        width: 300px;
+        align-self: center;
+    }
+}
+
+.rank-cards, .overview-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card {
+    border: 2px solid rgb(51, 122, 183);
+    border-radius: 5px;
+}
+
+    .card > div:first-child {
+        display: flex;
+        align-items: center;
+        background-color: rgb(51, 122, 183);
+        height: 40px;
+        padding: 20px;
+    }
+
+        .card > div:first-child > h3 {
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+.rank-card {
+    max-width: 700px;
+    min-width: 300px;
+    flex: 1 1 400px;
+    margin: 10px 25px;
+}
+
+    .rank-card > div:nth-child(2) {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .rank-card > div:nth-child(2) > div {
+            width: 100%;
+            display: flex;
+        }
+
+            .rank-card > div:nth-child(2) > div > span:last-child {
+                margin-left: 30px;
+            }
+
+            .rank-card > div:nth-child(2) > div > span:first-child {
+                flex-grow: 1;
+            }
+
+
+.overview-card {
+    width: 175px;
+    min-width: 175px;
+    margin: 10px 5px;
+}
+
+    .overview-card > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .overview-card > div:nth-child(2) > div {
+        display: flex;
+    }
+        .overview-card > div:nth-child(2) > div > i {
+            margin-right: 5px;
+        }
+
+
+i.climate-icon {
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+}
+
+    i.climate-icon.sunny-day {
+        background-image: url("/assets/sunny-day.svg");
+    }
+    i.climate-icon.cloudy-day{
+        background-image: url("/assets/cloudy-day.svg");
+    }
+    i.climate-icon.rainny-day {
+        background-image: url("/assets/rainny-day.svg");
+    }
+    i.climate-icon.tempest-day{
+        background-image: url("/assets/tempest-day.svg");
+    }
+
