@@ -1,3 +1,5 @@
+using ClimaTempo.BLL;
+using ClimaTempo.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +26,11 @@ namespace ClimaTempo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<ClimaTempoSimplesContext>();
+
+            services.AddScoped<IBLL_Previsao, BLL_Previsao>();
+            services.AddScoped<IDAL_Previsao, DAL_Previsao>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

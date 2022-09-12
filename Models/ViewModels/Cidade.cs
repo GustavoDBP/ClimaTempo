@@ -1,6 +1,6 @@
 ﻿namespace ClimaTempo.Models.ViewModels
 {
-    public class City
+    public class Cidade
     {
         public string Nome { get; set; }
         public string UF { get; set; }

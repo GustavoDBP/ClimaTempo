@@ -14,35 +14,6 @@ namespace ClimaTempo.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["Top3Hottest"] = new List<WeatherForecast>() {
-                new WeatherForecast() {
-                    Cidade = "Petrópolis/RJ",
-                    Min = 6,
-                    Max = 19,
-                    DataPrevisao = new DateTime()
-                },
-                new WeatherForecast() {
-                    Cidade = "São Paulo/SP",
-                    Min = 6,
-                    Max = 19,
-                    DataPrevisao = new DateTime()
-                }
-            };
-            ViewData["Top3Coldest"] = new List<WeatherForecast>() {
-                new WeatherForecast() {
-                    Cidade = "Petrópolis/RJ",
-                    Min = 6,
-                    Max = 19,
-                    DataPrevisao = new DateTime()
-                },
-                new WeatherForecast() {
-                    Cidade = "São Paulo/SP",
-                    Min = 6,
-                    Max = 19,
-                    DataPrevisao = new DateTime()
-                }
-            };
-
             return View();
         }
         public IActionResult About()
